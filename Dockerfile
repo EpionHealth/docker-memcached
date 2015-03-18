@@ -1,6 +1,7 @@
 FROM quay.io/aptible/ubuntu:14.04
 
 RUN apt-get update
+RUN ln -s -f /bin/true /usr/bin/chfn
 RUN apt-get -y install sasl2-bin memcached
 
 ADD templates/memcached-sasl /usr/bin/memcached-sasl
